@@ -27,3 +27,6 @@ The first step is to define a plane that will represent the motorcycle when it l
 ```
 RF__phi := RF1 * rotate('X',phi(t));
 ```
+
+TO BE IMPLEMENTED...
+
