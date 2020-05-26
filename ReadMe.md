@@ -2,7 +2,7 @@
 
 ## Reference frames
 
-A **mobile reference frame** can be defined starting from a fixed one (ABSOLUTE ORIGIN). The reference frame is moving with a longitudinal velocity $u(t)$, a lateral velocity $v(t)$ and an angular velocity $\Omega(t)$.
+A **mobile reference frame** can be defined starting from a fixed one (ABSOLUTE ORIGIN). The reference frame is moving with a longitudinal velocity $`u(t)`$, a lateral velocity $`v(t)`$ and an angular velocity $`\Omega(t)`$.
 
 ```
 MF_R       := use_moving_frame(u(t),v(t),0, 0,0,Omega(t)):
