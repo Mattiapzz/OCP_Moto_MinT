@@ -1,0 +1,205 @@
+motorcycle_data := [
+
+    g                       = 9.807             , # [m/s2]    - gravity acceleration
+
+    #      __    _____   
+    #  |  |_ |\|/__ | |_|
+    #  |__|__| |\_| | | |
+
+    epsilon                 = 0.428             , # [rad]     - caster angle
+    L__b                    = 0.730             , # [m]       - dist. swingarm-steer  
+    L__swa                  = 0.535             , # [m]       - lenght swingarm
+    x__off                  = 0.034             , # [m]       - offset of the front 
+
+    # wheels radius &               
+    # torus radius              
+    rf                      = 0.292             , # [m]       -
+    rtf                     = 0.0624            , # [m]       -
+    rr                      = 0.317             , # [m]       -
+    rtr                     = 0.097             , # [m]       -
+
+    #   __      
+    #  /   _ |V|
+    #  \__(_)| |
+
+    # Rear frame            
+    x__Rear                 = 0.230             , # [m]       -
+    z__Rear                 = 0.068             , # [m]       -
+
+    # Rider (RF__Rear)               
+    x__rdr                  = 0.313             , # [m]       -
+    z__rdr                  = 0.504             , # [m]       -
+
+    # Swingarm (RF__eta)                
+    x__Swing                = 0.275             , # [m]       -
+    z__Swing                = 0.052             , # [m]       -
+
+    # Steer (RF__delta)                 
+    x__delta                = 0.0230            , # [m]       - 
+    z__delta                = -0.098            , # [m]       -  
+
+    # Front wheel &         
+    # Unsprung mass         
+    x__fw_un                = -0.029            , # [m]       - 
+    z__fw_un                = +0.189            , # [m]       - 
+
+    #  ___    __ _ ______ _ 
+    #   | |\||_ |_) |  | |_|
+    #  _|_| ||__| \ | _|_| |
+
+    # Rear frame inertia    
+    m__m                    = 154.4             , # [kg]      -
+    Ix__m                   = 10.4              , # [kgm2]    -
+    Iy__m                   = 27.0              , # [kgm2]    -
+    Iz__m                   = 16.0              , # [kgm2]    -
+    Cyz__m                  = 0                 , # [kgm2]    -
+    Cxz__m                  = 0                 , # [kgm2]    -
+    Cxy__m                  = 0                 , # [kgm2]    -
+
+    # Rider inertia 
+    m__rdr                  = 68.5              , # [kg]      -
+    Ix__rdr                 = 4.946             , # [kgm2]    -
+    Iy__rdr                 = 5.908             , # [kgm2]    -
+    Iz__rdr                 = 3.304             , # [kgm2]    -
+    Cyz__rdr                = 0                 , # [kgm2]    -
+    Cxz__rdr                = 0                 , # [kgm2]    -
+    Cxy__rdr                = 0                 , # [kgm2]    -
+
+    # Swingarm inertia              
+    m__swa                  = 10.0              , # [kg]      -
+    Ix__swa                 = 0.020             , # [kgm2]    -
+    Iy__swa                 = 0.800             , # [kgm2]    -
+    Iz__swa                 = 0.800             , # [kgm2]    -
+    Cyz__swa                = 0                 , # [kgm2]    -
+    Cxz__swa                = 0                 , # [kgm2]    -
+    Cxy__swa                = 0                 , # [kgm2]    -
+
+    # Steer inertia 
+    m__delta                = 8.7500            , # [kg]      -
+    Ix__delta               = 0.2870            , # [kgm2]    -
+    Iy__delta               = 0.143             , # [kgm2]    -
+    Iz__delta               = 0.2063            , # [kgm2]    -
+    Cyz__delta              = 0                 , # [kgm2]    -
+    Cxz__delta              = 0                 , # [kgm2]    -
+    Cxy__delta              = 0                 , # [kgm2]    -
+
+    # Front W inertia   
+    m__wf                   = 12                , # [kg] 
+    Iy__wf                  = 0.4683            , # [kgm2]    - axial inertia
+    Id__wf                  = 0.2160            , # [kgm2]    - diametral inertia (Iz__wf)
+    Id__wf                  = 0.2160            , # [kgm2]    - diametral inertia (Ix__wf)
+    # Rear W inertia                
+    m__wr                   = 16.2              , # [kg]
+    Iy__wr                  = 0.664             , # [kgm2]    - axial inertia
+    Id__wr                  = 0.333             , # [kgm2]    - diametral inertia (Iz__wr)
+    Id__wr                  = 0.333             , # [kgm2]    - diametral inertia (Ix__wr)
+
+    # Unsprum inertia               
+    Ix__fw_un               = 0.217             , # [kgm2] 
+    Iy__fw_un               = 0.1830            , # [kgm2]
+    Iz__fw_un               = 0.068             , # [kgm2]    -      
+
+    #  __ _  _  __ __    
+    # |_ / \|_)/  |_     
+    # |  \_/| \\__|__    
+
+    # Front suspension  
+    k__fs                   = 19620             , # [N/m]     -
+    c__fs                   = 1679.7            , # [Ns/m]    -
+    s__fs                   = 0.490             , # [m]       - relaxation length
+    s__fmax                 = 0.490             , # [m]       - max length susp.
+    s__fpre                 = 0.007             , # [m]       - preload spring
+
+    # rear suspension    
+    k__rs                   = 147360            , # [N/m]     -
+    c__rs                   = 12000             , # [Ns/m]    -
+    eta__rs                 = 0                 , # [rad]     - angle of relaxed susp
+    eta__max                = -0.165            , # [rad]     - max rotaz swingarm
+    a__1                    = +0.13526          , # [m/rad]   - coeff. spring deformation
+    a__2                    = -0.1385           , # [m/rad2]  - coeff. spring deformation^2
+    a__3                    = -0.0358           , # [m/rad3]  - coeff. spring deformation^3
+
+    # Steer torque  
+    C__delta                = -10               , # [Ns/rad]  - steering damping
+    K__delta                = 0                 , # [N/rad]   - steering stiffness
+
+    # Aero      
+    x__a                    = 0                 , # [m]       - x coor. aerodynamic point 
+    z__a                    = 0.8776            , # [m]       - z coor. aerodynamic point
+    Ca                      = 0.3                 # [Nm2/s2]  - aerodynamic drag coeff
+ 
+]; 
+
+save(motorcycle_data,"motorcycle_data.mpl"):
+
+
+
+simple_tyre_data := [
+
+    #     _  _____ __    __ _  _           _     _  _  __ __       _ 
+    # |V||_|/__ | /     |_ / \|_)|V|| ||  |_|   |_)|_|/  |_   ||/ |_|
+    # | || |\_|_|_\__   |  \_/| \| ||_||__| |   |  | |\__|__\_||\ | |
+
+    #  _  __ _  _ 
+    # |_)|_ |_||_)
+    # | \|__| || \
+
+    # Rear tyre 
+    # METZELER 180/70
+
+    K__P__R                 = 130000            , # [N/m]     - radial stiffness
+    C__P__R                 =    100            , # [Ns/m]    - radial damping
+
+    # Long. force               
+    Bx__r                   =  13.00            , # []        -       
+    Cx__r                   =  1.40             , # []        - (@ KS=23.66)
+    Dx__r                   =  1.300            , # []        -         
+    Ex__r                   =  0.50             , # []        -
+
+    # Lat. force                
+    By__r                   =  3.00             , # []        -       
+    Cy__r                   =  2.70             , # []        - (@ KL=12.96 )
+    Dy__r                   =  1.60             , # []        -
+    Ey__r                   =  0.99             , # []        -
+    sigma1__R               =  0.20             , # [m]       - relaxation lenght
+    kphi1__R                =  0.650            , # [N/Rad]   - roll stiffness
+
+    # Moments               
+    u__r                    =  0.006            , # [m]       - rolling friction parameter
+    Mtz__r                  =  0.040            , # [m/Rad]   - 
+    LambdaMax__R            =  0.314            , # [N/Rad]   - zero trail
+    Tt__r                   = .030              , # [m]       - tyre trail
+
+    #  __ _  _    ___
+    # |_ |_)/ \|\| | 
+    # |  | \\_/| | | 
+
+    # Front tyre                
+    # METZELER 120/70  
+
+    K__P__F                 = 100000            , # [N/m]     - radial stiffness
+    C__P__F                 = 70                , # [Ns/m]    - radial damping
+
+    # Long. force               
+    Bx__f                   =  13.00            , # []        -
+    Cx__f                   =  1.40             , # []        - (@ KS=23.667)
+    Dx__f                   =  1.300            , # []        -        
+    Ex__f                   =  0.50             , # []        -
+
+    # Lat. force                
+    By__f                   =  2.80             , # []        -
+    Cy__f                   =  2.50             , # []        - (@ KL=12.96 )
+    Dy__f                   =  2.00             , # []        -
+    Ey__f                   =  0.95             , # []        -
+    sigma1__F               =  0.20             , # [m]       - relaxation lenght
+    kphi1__F                =  0.90             , # [N/Rad]   - roll stiffness
+
+    # Moments               
+    u__f                    =  0.005            , # [m]       - rolling friction parameter
+    Mtz__f                  =  0.045            , # [m/Rad]   -
+    LambdaMax__F            =  0.279            , # [N/Rad]   - zero trail
+    Tt__f                   =  0.020              # [m]       - tyre trail
+    
+];
+
+save(simple_tyre_data ,"tyre_data_linear.mpl"):
