@@ -1,7 +1,7 @@
 motorcycle_data := [omega__n = 10, xi__n = 1, g = 9.807, epsilon = .428, L__b
 = .730, L__swa = .535, x__off = .34e-1, rf = .292, rtf = .624e-1, rr = .317, 
 rtr = .97e-1, x__pin = .1e-1, z__pin = .1e-1, r__pin = .5e-1, r__crw = .10, 
-x__Rear = .230, z__Rear = .68e-1, x__rdr = .313, z__rdr = .504, h__rdr = .400,
+x__Rear = .230, z__Rear = .68e-1, x__rdr = .313, z__rdr = .504, h__rdr = .200,
 x__Swing = .275, z__Swing = .52e-1, x__delta = .230e-1, z__delta = -.98e-1, 
 x__fw_un = -.29e-1, z__fw_un = .189, m__m = 154.4, Ix__m = 10.4, Iy__m = 27.0,
 Iz__m = 16.0, Cyz__m = 0, Cxz__m = 0, Cxy__m = 0, m__rdr = 68.5, Ix__rdr = 4.9\
