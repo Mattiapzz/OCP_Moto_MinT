@@ -1,0 +1,9 @@
+
+; mexFunction.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Straight_Mex"
+DESCRIPTION  'Mex file for Straight'
+
+EXPORTS
+    ; Explicit exports can go here
+    mexFunction

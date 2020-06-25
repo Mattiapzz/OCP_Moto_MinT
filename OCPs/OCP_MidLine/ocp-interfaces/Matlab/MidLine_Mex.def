@@ -1,0 +1,9 @@
+
+; mexFunction.def : Declares the module parameters for the DLL.
+
+LIBRARY      "MidLine_Mex"
+DESCRIPTION  'Mex file for MidLine'
+
+EXPORTS
+    ; Explicit exports can go here
+    mexFunction
