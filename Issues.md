@@ -4,6 +4,11 @@
 - [3. Trascurare dinamica della catena?](#3-trascurare-dinamica-della-catena)
   - [3.1. Idee aggiuntive](#31-idee-aggiuntive)
   - [3.2. Trascurare dinamica dell'albero motore?](#32-trascurare-dinamica-dellalbero-motore)
+- [4. Problemi di convergenza](#4-problemi-di-convergenza)
+  - [4.1. Parametri di BAUMGARTE](#41-parametri-di-baumgarte)
+  - [4.2. Altro](#42-altro)
+- [5. Problemi vari con PINS](#5-problemi-vari-con-pins)
+  - [5.1. Le funzioni regolarizzare sono state modificate?](#51-le-funzioni-regolarizzare-sono-state-modificate)
 
 
 # 1. Tensione della catena
@@ -64,3 +69,26 @@ $$M_e=M_e(\omega_e)$$
 dove $\omega_e$ dipende da $\omega_p$ attraverso il cambio
 
 ## 3.2. Trascurare dinamica dell'albero motore?
+
+
+# 4. Problemi di convergenza
+
+## 4.1. Parametri di BAUMGARTE
+
+- cosa usare come fattore di damping
+- cosa usare come frequenza naturale
+
+## 4.2. Altro
+
+- coppie vengono positive anche se il controllo è vincolato tra 0 e 1
+- sembra non tenere il centro strada
+- slip parte la $\lambda=1$ (idk)
+
+# 5. Problemi vari con PINS
+
+## 5.1. Le funzioni regolarizzare sono state modificate?
+
+Mi dava errore il fase di compilazione.
+
+
+
