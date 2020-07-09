@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------*\
  |  file: General_Main.cc                                                |
  |                                                                       |
- |  version: 1.0   date 25/6/2020                                        |
+ |  version: 1.0   date 29/6/2020                                        |
  |                                                                       |
  |  Copyright (C) 2020                                                   |
  |                                                                       |
@@ -54,37 +54,41 @@ main() {
     Road2D           road( "road" );
 
     // Auxiliary values
-   real_type tol_p0 = 0.1;
-   real_type eps_c0 = 0.1;
-   real_type lat_peak_front = 1;
-   real_type closed_gas = 0;
-   real_type long_peak_front = 0.11;
-   real_type eps_p0 = 0.1;
-   real_type w__ic0 = 1;
-   real_type lat_peak_rear = 1;
-   real_type phi__max = 7/18.0*Math::PI;
-   real_type eps_p = eps_p0;
-   real_type w__ic = w__ic0;
-   real_type w__LR0 = 0;
-   real_type tol_p = tol_p0;
-   real_type not_braking = 0;
-   real_type long_peak_rear = 0.11;
-   real_type w__LR = w__LR0;
-   real_type stering_norm = 1;
+   real_type w__ss0 = 1;
    real_type e__b0 = 0.1;
    real_type e__b = e__b0;
-   real_type w__t0 = 1/100000.0;
-   real_type eps_c = eps_c0;
-   real_type open_gas = 1;
-   real_type braking = 1;
+   real_type eps_c0 = 0.1;
+   real_type long_peak_rear = 0.11;
    real_type p__b0 = 0.1;
-   real_type p__b = p__b0;
-   real_type w__t = w__t0;
-   real_type delta__max = 1/18.0*Math::PI;
-   real_type w__ss0 = 1;
+   real_type closed_gas = 0;
    real_type w__ss = w__ss0;
+   real_type w__t0 = 1/100000.0;
+   real_type long_peak_front = 0.11;
    real_type tol_c0 = 0.1;
+   real_type lat_peak_rear = 1;
+   real_type lat_peak_front = 1;
+   real_type open_gas = 1;
+   real_type baum_flag = 0;
+   real_type omega__n = 20*baum_flag;
+   real_type w__ic0 = 10;
+   real_type w__ic = w__ic0;
+   real_type p__b = p__b0;
+   real_type braking = 1;
+   real_type not_braking = 0;
+   real_type delta__max = 1/18.0*Math::PI;
+   real_type eps_p0 = 0.1;
+   real_type eps_p = eps_p0;
+   real_type w__pen = 1-baum_flag;
+   real_type stering_norm = 1;
+   real_type phi__max = 7/18.0*Math::PI;
+   real_type eps_c = eps_c0;
+   real_type w__t = w__t0;
+   real_type w__LR0 = 0;
+   real_type w__LR = w__LR0;
+   real_type tol_p0 = 0.1;
+   real_type tol_p = tol_p0;
    real_type tol_c = tol_c0;
+   real_type xi__n = 0.9*baum_flag;
     integer InfoLevel = 4;
 
     GenericContainer &  data_ControlSolver = gc_data["ControlSolver"];
@@ -152,45 +156,6 @@ main() {
 
     // Boundary Conditions
      GenericContainer & data_BoundaryConditions = gc_data["BoundaryConditions"];
-    data_BoundaryConditions["cyclic_u"] = SET;
-    data_BoundaryConditions["cyclic_v"] = SET;
-    data_BoundaryConditions["cyclic_Omega"] = SET;
-    data_BoundaryConditions["cyclic_phi"] = SET;
-    data_BoundaryConditions["cyclic_theta"] = SET;
-    data_BoundaryConditions["cyclic_h"] = SET;
-    data_BoundaryConditions["cyclic_delta"] = SET;
-    data_BoundaryConditions["cyclic_eta"] = SET;
-    data_BoundaryConditions["cyclic_s__f"] = SET;
-    data_BoundaryConditions["cyclic_x__f"] = SET;
-    data_BoundaryConditions["cyclic_y__f"] = SET;
-    data_BoundaryConditions["cyclic_z__f"] = SET;
-    data_BoundaryConditions["cyclic_x__r"] = SET;
-    data_BoundaryConditions["cyclic_y__r"] = SET;
-    data_BoundaryConditions["cyclic_z__r"] = SET;
-    data_BoundaryConditions["cyclic_delta__f"] = SET;
-    data_BoundaryConditions["cyclic_phi__f"] = SET;
-    data_BoundaryConditions["cyclic_omega__r"] = SET;
-    data_BoundaryConditions["cyclic_omega__f"] = SET;
-    data_BoundaryConditions["cyclic_phi__dot"] = SET;
-    data_BoundaryConditions["cyclic_theta__dot"] = SET;
-    data_BoundaryConditions["cyclic_h__dot"] = SET;
-    data_BoundaryConditions["cyclic_delta__dot"] = SET;
-    data_BoundaryConditions["cyclic_eta__dot"] = SET;
-    data_BoundaryConditions["cyclic_s__f__dot"] = SET;
-    data_BoundaryConditions["cyclic_x__f__dot"] = SET;
-    data_BoundaryConditions["cyclic_y__f__dot"] = SET;
-    data_BoundaryConditions["cyclic_z__f__dot"] = SET;
-    data_BoundaryConditions["cyclic_x__r__dot"] = SET;
-    data_BoundaryConditions["cyclic_y__r__dot"] = SET;
-    data_BoundaryConditions["cyclic_z__r__dot"] = SET;
-    data_BoundaryConditions["cyclic_delta__f__dot"] = SET;
-    data_BoundaryConditions["cyclic_phi__f__dot"] = SET;
-    data_BoundaryConditions["cyclic_Ftr"] = SET;
-    data_BoundaryConditions["cyclic_Mbf"] = SET;
-    data_BoundaryConditions["cyclic_Mbr"] = SET;
-    data_BoundaryConditions["cyclic_tau"] = SET;
-    data_BoundaryConditions["cyclic_n"] = SET;
-    data_BoundaryConditions["cyclic_xi"] = SET;
 
     // Guess
     GenericContainer & data_Guess = gc_data["Guess"];
@@ -203,7 +168,7 @@ main() {
     // Model Parameters
     data_Parameters["CXZ"] = 0.38736092039245;
     data_Parameters["Ca"] = 0.3;
-    data_Parameters["Fzmin"] = 200;
+    data_Parameters["Fzmin"] = 100;
     data_Parameters["IX"] = 42.6268656266919;
     data_Parameters["IY"] = 79.5529675764739;
     data_Parameters["IZ"] = 39.0041019529552;
@@ -236,7 +201,6 @@ main() {
     data_Parameters["m__swa"] = 10;
     data_Parameters["m__wf"] = 12;
     data_Parameters["m__wr"] = 16.2;
-    data_Parameters["n__ss"] = 0;
     data_Parameters["r__crw"] = 0.1;
     data_Parameters["rf"] = 0.292;
     data_Parameters["rr"] = 0.317;
@@ -248,7 +212,7 @@ main() {
     data_Parameters["x__a"] = 0;
     data_Parameters["x__off"] = 0.034;
     data_Parameters["x__rdr"] = 0.313;
-    data_Parameters["xi__n"] = 1;
+    data_Parameters["xi__n"] = xi__n;
     data_Parameters["z__a"] = 0.8776;
     data_Parameters["z__rdr"] = 0.504;
     data_Parameters["C__delta"] = 10;
@@ -266,7 +230,7 @@ main() {
     data_Parameters["h__dot__ss"] = 0;
     data_Parameters["m__delta"] = 8.75;
     data_Parameters["not_braking"] = not_braking;
-    data_Parameters["omega__n"] = 10;
+    data_Parameters["omega__n"] = omega__n;
     data_Parameters["open_gas"] = open_gas;
     data_Parameters["phi__dot__ss"] = 0;
     data_Parameters["phi__f__dot__ss"] = 0;
@@ -282,6 +246,10 @@ main() {
     data_Parameters["theta__d__00"] = 0;
     data_Parameters["theta__dot__ss"] = 0;
     data_Parameters["theta__ss"] = -0.109051230119918;
+    data_Parameters["w__eta__sserr"] = 1;
+    data_Parameters["w__h__sserr"] = 1;
+    data_Parameters["w__s__f__sserr"] = 1;
+    data_Parameters["w__theta__sserr"] = 1;
     data_Parameters["x__Swing"] = 0.275;
     data_Parameters["x__delta"] = 0.023;
     data_Parameters["x__f__dot__ss"] = 0;
@@ -293,6 +261,20 @@ main() {
     data_Parameters["z__f__dot__ss"] = 0;
     data_Parameters["z__r__dot__ss"] = 0;
     data_Parameters["delta__f__dot__ss"] = 0;
+    data_Parameters["w__delta__dot__sserr"] = 1;
+    data_Parameters["w__delta__f__dot__sserr"] = 1;
+    data_Parameters["w__eta__dot__sserr"] = 1;
+    data_Parameters["w__h__dot__sserr"] = 1;
+    data_Parameters["w__phi__dot__sserr"] = 1;
+    data_Parameters["w__phi__f__dot__sserr"] = 1;
+    data_Parameters["w__s__f__dot__sserr"] = 1;
+    data_Parameters["w__theta__dot__sserr"] = 1;
+    data_Parameters["w__x__f__dot__sserr"] = 1;
+    data_Parameters["w__x__r__dot__sserr"] = 1;
+    data_Parameters["w__y__f__dot__sserr"] = 1;
+    data_Parameters["w__y__r__dot__sserr"] = 1;
+    data_Parameters["w__z__f__dot__sserr"] = 1;
+    data_Parameters["w__z__r__dot__sserr"] = 1;
 
     // Guess Parameters
 
@@ -300,10 +282,12 @@ main() {
     data_Parameters["Ftr__ss"] = 380.399999969783;
     data_Parameters["Mbf__ss"] = 0;
     data_Parameters["Mbr__ss"] = 0;
+    data_Parameters["n__ss"] = 0;
     data_Parameters["phi__ss"] = 0;
     data_Parameters["tau__ss"] = -7.00288564829757e-11;
     data_Parameters["u__ss"] = 20;
     data_Parameters["v__ss"] = -2.16104835964975e-10;
+    data_Parameters["w__LR"] = w__LR;
     data_Parameters["w__ic"] = w__ic;
     data_Parameters["xi__ss"] = 0;
     data_Parameters["Omega__ss"] = -5.24305880064494e-14;
@@ -312,12 +296,51 @@ main() {
     data_Parameters["omega__f__ss"] = 68.4931507012337;
     data_Parameters["omega__r__ss"] = 63.2921421213881;
     data_Parameters["phi__f__ss"] = 3.59906220911141e-12;
+    data_Parameters["w__Ftr__bc"] = 6.910651359e-06;
+    data_Parameters["w__Mbf__bc"] = 1;
+    data_Parameters["w__Mbr__bc"] = 1;
+    data_Parameters["w__Omega__bc"] = 1;
+    data_Parameters["w__delta__bc"] = 1;
+    data_Parameters["w__delta__f__bc"] = 1;
+    data_Parameters["w__eta__bc"] = 1;
+    data_Parameters["w__eta__dot__bc"] = 1;
+    data_Parameters["w__h__bc"] = 1;
+    data_Parameters["w__h__dot__bc"] = 1;
+    data_Parameters["w__n__bc"] = 1;
+    data_Parameters["w__omega__f__bc"] = 0.0002131599999;
+    data_Parameters["w__omega__r__bc"] = 0.0002496320888;
+    data_Parameters["w__phi__bc"] = 1;
+    data_Parameters["w__phi__dot__bc"] = 1;
+    data_Parameters["w__phi__f__bc"] = 1;
+    data_Parameters["w__s__f__bc"] = 1;
+    data_Parameters["w__tau__bc"] = 1;
+    data_Parameters["w__theta__bc"] = 1;
+    data_Parameters["w__u__bc"] = 1/400.000;
+    data_Parameters["w__v__bc"] = 1;
+    data_Parameters["w__x__f__bc"] = 1;
+    data_Parameters["w__x__r__bc"] = 1;
+    data_Parameters["w__xi__bc"] = 1;
+    data_Parameters["w__y__f__bc"] = 1;
+    data_Parameters["w__y__r__bc"] = 1;
+    data_Parameters["w__z__f__bc"] = 1;
+    data_Parameters["w__z__r__bc"] = 1;
     data_Parameters["x__f__ss"] = 0.86315668743341;
     data_Parameters["x__r__ss"] = 0.512935849630048;
     data_Parameters["y__f__ss"] = -1.20129903987853e-13;
     data_Parameters["y__r__ss"] = 1.66702482026682e-13;
     data_Parameters["z__f__ss"] = -0.011693410617639;
     data_Parameters["z__r__ss"] = -0.0113621376018157;
+    data_Parameters["w__delta__dot__bc"] = 1;
+    data_Parameters["w__delta__f__dot__bc"] = 1;
+    data_Parameters["w__phi__f__dot__bc"] = 1;
+    data_Parameters["w__s__f__dot__bc"] = 1;
+    data_Parameters["w__theta__dot__bc"] = 1;
+    data_Parameters["w__x__f__dot__bc"] = 1;
+    data_Parameters["w__x__r__dot__bc"] = 1;
+    data_Parameters["w__y__f__dot__bc"] = 1;
+    data_Parameters["w__y__r__dot__bc"] = 1;
+    data_Parameters["w__z__f__dot__bc"] = 1;
+    data_Parameters["w__z__r__dot__bc"] = 1;
 
     // Post Processing Parameters
 

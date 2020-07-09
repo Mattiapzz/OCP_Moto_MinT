@@ -1,0 +1,9 @@
+
+; mexFunction.def : Declares the module parameters for the DLL.
+
+LIBRARY      "Test_Convergence_Mex"
+DESCRIPTION  'Mex file for Test_Convergence'
+
+EXPORTS
+    ; Explicit exports can go here
+    mexFunction

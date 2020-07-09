@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------*\
  |  file: General_Guess.cc                                               |
  |                                                                       |
- |  version: 1.0   date 25/6/2020                                        |
+ |  version: 1.0   date 29/6/2020                                        |
  |                                                                       |
  |  Copyright (C) 2020                                                   |
  |                                                                       |
@@ -191,43 +191,43 @@ namespace GeneralDefine {
     Road2D::SegmentClass const & segment = pRoad->getSegmentByIndex(i_segment);
     X__[ iX_u             ] = ModelPars[126];
     X__[ iX_v             ] = ModelPars[127];
-    X__[ iX_Omega         ] = ModelPars[155];
+    X__[ iX_Omega         ] = ModelPars[156];
     X__[ iX_phi           ] = ModelPars[91];
-    X__[ iX_theta         ] = ModelPars[188];
+    X__[ iX_theta         ] = ModelPars[189];
     X__[ iX_h             ] = ModelPars[69];
-    X__[ iX_delta         ] = ModelPars[159];
+    X__[ iX_delta         ] = ModelPars[160];
     X__[ iX_eta           ] = ModelPars[66];
-    X__[ iX_s__f          ] = ModelPars[179];
-    X__[ iX_x__f          ] = ModelPars[192];
-    X__[ iX_y__f          ] = ModelPars[196];
-    X__[ iX_z__f          ] = ModelPars[202];
-    X__[ iX_x__r          ] = ModelPars[194];
-    X__[ iX_y__r          ] = ModelPars[198];
-    X__[ iX_z__r          ] = ModelPars[204];
-    X__[ iX_delta__f      ] = ModelPars[158];
-    X__[ iX_phi__f        ] = ModelPars[176];
-    X__[ iX_omega__r      ] = ModelPars[172];
-    X__[ iX_omega__f      ] = ModelPars[170];
-    X__[ iX_phi__dot      ] = ModelPars[174];
-    X__[ iX_theta__dot    ] = ModelPars[187];
-    X__[ iX_h__dot        ] = ModelPars[163];
-    X__[ iX_delta__dot    ] = ModelPars[157];
-    X__[ iX_eta__dot      ] = ModelPars[162];
-    X__[ iX_s__f__dot     ] = ModelPars[178];
-    X__[ iX_x__f__dot     ] = ModelPars[191];
-    X__[ iX_y__f__dot     ] = ModelPars[195];
-    X__[ iX_z__f__dot     ] = ModelPars[201];
-    X__[ iX_x__r__dot     ] = ModelPars[193];
-    X__[ iX_y__r__dot     ] = ModelPars[197];
-    X__[ iX_z__r__dot     ] = ModelPars[203];
-    X__[ iX_delta__f__dot ] = ModelPars[205];
-    X__[ iX_phi__f__dot   ] = ModelPars[175];
+    X__[ iX_s__f          ] = ModelPars[180];
+    X__[ iX_x__f          ] = ModelPars[225];
+    X__[ iX_y__f          ] = ModelPars[229];
+    X__[ iX_z__f          ] = ModelPars[235];
+    X__[ iX_x__r          ] = ModelPars[227];
+    X__[ iX_y__r          ] = ModelPars[231];
+    X__[ iX_z__r          ] = ModelPars[237];
+    X__[ iX_delta__f      ] = ModelPars[159];
+    X__[ iX_phi__f        ] = ModelPars[177];
+    X__[ iX_omega__r      ] = ModelPars[173];
+    X__[ iX_omega__f      ] = ModelPars[171];
+    X__[ iX_phi__dot      ] = ModelPars[175];
+    X__[ iX_theta__dot    ] = ModelPars[188];
+    X__[ iX_h__dot        ] = ModelPars[164];
+    X__[ iX_delta__dot    ] = ModelPars[158];
+    X__[ iX_eta__dot      ] = ModelPars[163];
+    X__[ iX_s__f__dot     ] = ModelPars[179];
+    X__[ iX_x__f__dot     ] = ModelPars[224];
+    X__[ iX_y__f__dot     ] = ModelPars[228];
+    X__[ iX_z__f__dot     ] = ModelPars[234];
+    X__[ iX_x__r__dot     ] = ModelPars[226];
+    X__[ iX_y__r__dot     ] = ModelPars[230];
+    X__[ iX_z__r__dot     ] = ModelPars[236];
+    X__[ iX_delta__f__dot ] = ModelPars[238];
+    X__[ iX_phi__f__dot   ] = ModelPars[176];
     X__[ iX_Ftr           ] = ModelPars[4];
     X__[ iX_Mbf           ] = ModelPars[25];
     X__[ iX_Mbr           ] = ModelPars[26];
     X__[ iX_tau           ] = ModelPars[121];
     X__[ iX_n             ] = ModelPars[76];
-    X__[ iX_xi            ] = ModelPars[143];
+    X__[ iX_xi            ] = ModelPars[144];
 
   }
 

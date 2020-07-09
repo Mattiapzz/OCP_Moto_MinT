@@ -1,7 +1,7 @@
 /*-----------------------------------------------------------------------*\
  |  file: General.hh                                                     |
  |                                                                       |
- |  version: 1.0   date 25/6/2020                                        |
+ |  version: 1.0   date 29/6/2020                                        |
  |                                                                       |
  |  Copyright (C) 2020                                                   |
  |                                                                       |
@@ -108,7 +108,7 @@ namespace GeneralDefine {
     stringstream ss_redirected_stream;
 
     // Model Paramaters  - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    real_type ModelPars[208];
+    real_type ModelPars[266];
 
     // Controls  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     Mechatronix::PenaltyBarrierU t__oControl;
